@@ -1,14 +1,29 @@
+---
 title: 'Microsoft Graph documentation'
 Subtitle: > 
-    A simple way to generate 
-    PDF, EPUB, MOBI, HTML, 
-    using Markdown and git repositories. 
-    Output formats are generated using Pandoc.
-subject: Microsoft Graph documentation
+    Use the Microsoft Graph API to connect to the data that drives productivity – mail, calendar, contacts, documents, directory, devices, and more.
+subject: Microsoft Graph
 author:
-- Microsoft
-keywords: ebooks, pandoc, pdf, html
-rights: Creative Commons Non-Commercial Share Alike 3.0
+- Microsoft community
+keywords: ebooks, microsoft, graph, api
 language: en-US
-lang: en
 tags: [pandoc, pdf, epub, mobi creation]
+cover-image: "images/microsoft_graph.png"
+lang: en
+# Note you will need quotes around dates
+date: '2015-01-27'
+stylesheet: epub.css
+# pandoc format arguments
+# because of security these options are limited
+format-arguments:
+    pdf: >
+        -S
+        --toc
+        --number-sections
+        -V mainfont='Latin Modern Roman' 
+        -V sansfont='Times New Roman' 
+        -V monofont=Arial -V fontsize=12pt -V version=1.10
+    html: -S --toc-depth=3 --chapters --number-sections --toc
+    epub: -S --epub-embed-font=OpenSans-Regular.ttf --epub-chapter-level=3 --number-sections --toc
+    mobi: ok
+...
